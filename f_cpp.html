@@ -5,15 +5,11 @@
     <meta name="F-木比白桦" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="F.png" type="image/x-icon">
 
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <link rel="stylesheet" 
-            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
+    
     
     <style>
         .markdown-body {
-        font-family: -apple-system, sans-serif;
+        font-family: -apple-system, Cascadia Code;
         max-width: 800px;
         margin: 0 auto;
         border-radius: 10px;
@@ -46,19 +42,8 @@
             <a class="T-B-T" href="https://wwss.lanzouq.com/isBAc2yao4je">蓝奏云下载</a>
         </div>
         <h3 class="T">密码：F_CPP</h3>
-        <div id="content" class="markdown-body"></div>
 
-        <script>
-            // 配置marked
-            marked.setOptions({
-            highlight: (code, lang) => 
-                hljs.highlightAuto(code).value
-            });
-
-            // 包含代码框的MD内容
-            const mdContent = `
-# F.cpp
-\`\`\`c++
+<pre class="markdown-body">
 #include<iostream>
 using namespace std;
 
@@ -71,15 +56,8 @@ int main(){
     }
     return 0;
 }
-\`\`\`
+</pre>
 
-
-`;
-
-            // 渲染到页面
-            document.getElementById('content').innerHTML = 
-            marked.parse(mdContent);
-        </script>
         <h3 class="jt">自己编译吧！</h3>
     </div>
     <div class="cc">© 2025 by 木比白桦</div>
