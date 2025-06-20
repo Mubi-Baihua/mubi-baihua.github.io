@@ -1,362 +1,159 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>F-Speed</title>
+    <meta name="F-木比白桦" content="width=device-width, initial-scale=1.0">
+    <title>木比白桦</title>
     <link rel="icon" href="F.png" type="image/x-icon">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            background: #0a1929;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            color: white;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 600px;
-            text-align: center;
-            padding: 20px;
-        }
-        
-        .speed-display {
-            margin-bottom: 30px;
-        }
-        
-        .speed-value {
-            font-size: 22vw;
-            font-weight: 800;
-            color: #4fc3f7;
-            text-shadow: 0 0 30px rgba(79, 195, 247, 0.5);
-            line-height: 0.9;
-            transition: all 0.3s ease;
-            margin-bottom: 10px;
-        }
-        
-        .speed-unit {
-            font-size: 6vw;
-            color: rgba(255, 255, 255, 0.7);
-            vertical-align: top;
-            margin-left: 10px;
-        }
-        
-        .signal-container {
-            margin: 30px auto;
-            width: 90%;
-            max-width: 400px;
-            background: rgba(30, 60, 90, 0.4);
-            border-radius: 20px;
-            padding: 15px;
-        }
-        
-        .signal-title {
-            font-size: 1.2rem;
-            color: #a0c8ff;
-            margin-bottom: 15px;
-        }
-        
-        .signal-bars {
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            height: 60px;
-        }
-        
-        .signal-bar {
-            width: 14px;
-            margin: 0 4px;
-            border-radius: 3px 3px 0 0;
-            background: #4fc3f7;
-            transition: height 0.5s ease;
-        }
-        
-        .signal-bar:nth-child(1) { height: 15px; background: #ff6b6b; }
-        .signal-bar:nth-child(2) { height: 30px; }
-        .signal-bar:nth-child(3) { height: 45px; }
-        .signal-bar:nth-child(4) { height: 60px; }
-        
-        .signal-strength {
-            margin-top: 10px;
-            font-size: 1.1rem;
-            color: #4fc3f7;
-            font-weight: 500;
-        }
-        
-        .status {
-            font-size: 1.3rem;
-            margin-top: 20px;
-            color: #a0c8ff;
-            min-height: 40px;
-        }
-        
-        .accuracy {
-            margin-top: 10px;
-            font-size: 1.1rem;
-            color: rgba(160, 200, 255, 0.7);
-        }
-        
-        .footer {
-            position: absolute;
-            bottom: 20px;
-            width: 100%;
-            text-align: center;
-            color: rgba(160, 200, 255, 0.5);
-            font-size: 0.9rem;
-        }
-        
-        @media (max-width: 600px) {
-            .speed-value {
-                font-size: 25vw;
-            }
-            
-            .status {
-                font-size: 1.1rem;
-            }
-        }
-        
-        /* 动画效果 */
-        @keyframes pulse {
-            0% { text-shadow: 0 0 10px rgba(79, 195, 247, 0.5); }
-            50% { text-shadow: 0 0 30px rgba(79, 195, 247, 0.8); }
-            100% { text-shadow: 0 0 10px rgba(79, 195, 247, 0.5); }
-        }
-        
-        .pulse {
-            animation: pulse 2s infinite;
-        }
-        
-        .gps-icon {
-            display: inline-block;
-            margin-right: 10px;
-            font-size: 1.2em;
-            vertical-align: middle;
-        }
-    </style>
 </head>
 <body>
-    <div class="container">
-        <div class="speed-display">
-            <div class="speed-value pulse" id="speed">0<span class="speed-unit">km/h</span></div>
-        </div>
-        
-        <div class="signal-container">
-            <div class="signal-title"><span class="gps-icon">🛰️</span> 卫星信号强度</div>
-            <div class="signal-bars">
-                <div class="signal-bar" id="bar1"></div>
-                <div class="signal-bar" id="bar2"></div>
-                <div class="signal-bar" id="bar3"></div>
-                <div class="signal-bar" id="bar4"></div>
-            </div>
-            <div class="signal-strength" id="signal-strength">信号获取中...</div>
-        </div>
-        
-        <div class="status" id="status"><span class="gps-icon">📡</span> 正在连接GPS卫星...</div>
-        <div class="accuracy" id="accuracy"><span class="gps-icon">📍</span> 定位精度: -- 米</div>
+    <div class="top_t">
+        <img src="F.png" class="logo">
+        <div class="t-top-m">木比白桦</div>            
+        <a class="t-top-s" href="index.html">首页</a>
+        <a class="t-top-sz" href="speed.html">F-Speed</a>
+        <a class="t-top" href="f_net.html">内网文件传输</a>
+        <a class="t-top" href="f_cpp.html">F.cpp</a>
+        <a class="t-top" href="dsf.html">DeepSeek范</a>
+        <a class="t-top" href="other.html">其他</a>
     </div>
-    
-    <div class="footer">
-        © 2025 by 木比白桦
-    </div>
+    <div style="margin-top: 10px;"></div>
+    <div class="FE">
+        <h1 class="t">F-Speed</h1>
 
-    <script>
-        // 全局变量
-        let watchId = null;
-        let lastPosition = null;
-        let lastSpeed = 0;
+        <h2>F-Speed 1</h2>
+        <h3 class="jt">在线测速！</h3>
         
-        // DOM元素
-        const speedDisplay = document.getElementById('speed');
-        const statusDisplay = document.getElementById('status');
-        const accuracyDisplay = document.getElementById('accuracy');
-        const signalStrengthDisplay = document.getElementById('signal-strength');
-        const bars = [
-            document.getElementById('bar1'),
-            document.getElementById('bar2'),
-            document.getElementById('bar3'),
-            document.getElementById('bar4')
-        ];
-        
-        // 页面加载后自动启动测速
-        window.addEventListener('load', () => {
-            startSpeedDetection();
-        });
-        
-        // 开始测速
-        function startSpeedDetection() {
-            // 更新状态显示
-            statusDisplay.textContent = "📡 正在请求位置权限...";
+        <div class="T-B">
+            <a class="T-B-T" href="speed_s.html">打开</a>
+        </div>
+    </div>
+    <div class="cc">© 2025 by 木比白桦</div>
+    <style>
+        body {
+            background-color: #30727B;
+        }
+        .FE {
+            width: 98%;
+            height: 350px;
+            padding-left: 10px;
+            box-sizing: border-box;
+            background-color: #ffff;
+            border-radius: 0px 0px 10px 10px;
+            margin-left: 1%;
+            padding-top: 10px;
+        }
+        .t-top-m {
+            color: #ffff;
+            height: 40px;
+            margin-left: 10px;
+            margin-top: 12.5px;
+        }
+        .t-top-s {
+            color: #ffff;
+            height: 40px;
+            margin-left: 30px;
+            margin-top: 12.5px;
+            cursor: pointer;
+            user-select: none;
+            text-decoration: none;
+        }
+        .t-top {
+            color: #ffff;
+            height: 40px;
+            margin-left: 15px;
+            margin-top: 12.5px;
+            cursor: pointer;
+            user-select: none;
+            text-decoration: none;
+        }
+        .t-top-s-sz {
+            color: rgb(148, 224, 223);
+            height: 40px;
+            margin-left: 30px;
+            margin-top: 12.5px;
+            cursor: pointer;
+            user-select: none;
+            text-decoration: none;
+        }
+        .t-top-sz {
+            color: rgb(148, 224, 223);
+            height: 40px;
+            margin-left: 15px;
+            margin-top: 12.5px;
+            cursor: pointer;
+            user-select: none;
+            text-decoration: none;
+        }
+        .logo {
+            width: 40px;
+            height: 40px;
+            margin-left: 5px;
+            margin-top: 5px;
+        }
+        .top_t {
+            display: flex;
+            width: 98%;
+            height: 50px;
+            margin-top:20px ;
+            background-color: rgb(20, 86, 95);
+            border-radius: 10px 10px 0px 0px;
+            margin-left: 1%;
+        }
+        .t {
+            text-align: center;
+        }
+        .j {
+            margin-left: 20px;
+            color: rgb(255,0,0);
             
-            // 检查浏览器是否支持Geolocation
-            if (!navigator.geolocation) {
-                statusDisplay.textContent = "⚠️ 错误：您的浏览器不支持地理定位功能";
-                signalStrengthDisplay.textContent = "请使用Chrome/Firefox等现代浏览器";
-                return;
-            }
+        }
+        .jt {
+            margin-left: 20px;
+            color: #30727B;
+
             
-            // 直接使用watchPosition开始位置监控
-            try {
-                watchId = navigator.geolocation.watchPosition(
-                    positionSuccess,
-                    handleError,
-                    {
-                        enableHighAccuracy: true,
-                        maximumAge: 0,
-                        timeout: 10000
-                    }
-                );
-                
-                // 更新状态显示
-                statusDisplay.textContent = "📡 正在获取位置信息...";
-            } catch (e) {
-                statusDisplay.textContent = "⚠️ 启动定位时出错: " + e.message;
-            }
+        }
+        .endl {
+            margin-top: 50px;
+        }
+
+        .T{
+            margin-left: 20px; 
+        }
+        .T-B{
+            width: 100px;
+            height: 30px;
+            background-color: #30727B;
+            color: #ffff;
+            border-radius: 20px;
+            margin-left: 20px;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+            user-select: none;
+            text-decoration: none;
+        }
+        .T-B-T{
+            width: 100px;
+            height: 30px;
+            background-color: #30727B;
+            color: #ffff;
+            border-radius: 20px;
+            margin-left: 1%;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+            user-select: none;
+            text-decoration: none;
+        }
+        .cc {
+            text-align: center;
+            color: #ffff;
+            margin-top: 10px;
+            font-size: small;
         }
         
-        // 位置获取成功
-        function positionSuccess(position) {
-            // 更新状态显示
-            statusDisplay.textContent = "✅ GPS信号已连接";
-            
-            const lat = position.coords.latitude;
-            const lng = position.coords.longitude;
-            const accuracy = position.coords.accuracy;
-            
-            // 更新精度显示
-            accuracyDisplay.textContent = `📍 定位精度: ${Math.round(accuracy)} 米`;
-            
-            // 更新信号强度显示（基于精度）
-            updateSignalStrength(accuracy);
-            
-            // 计算速度（如果是第一个点，无法计算速度）
-            if (lastPosition) {
-                // 计算两个点之间的距离（使用Haversine公式）
-                const distance = calculateDistance(
-                    lastPosition.coords.latitude,
-                    lastPosition.coords.longitude,
-                    lat,
-                    lng
-                );
-                
-                // 计算时间差（秒）
-                const timeDiff = (position.timestamp - lastPosition.timestamp) / 1000;
-                
-                if (timeDiff > 0) {
-                    // 计算速度 (km/h)
-                    const speed = (distance / timeDiff) * 3.6;
-                    const displaySpeed = Math.max(0, Math.round(speed));
-                    
-                    // 更新速度显示（整数）
-                    speedDisplay.innerHTML = `${displaySpeed}<span class="speed-unit">km/h</span>`;
-                    
-                    // 根据速度改变颜色
-                    if (displaySpeed === 0) {
-                        speedDisplay.style.color = "#a0c8ff";
-                    } else if (displaySpeed < 50) {
-                        speedDisplay.style.color = "#4fc3f7";
-                    } else {
-                        speedDisplay.style.color = "#00e676";
-                    }
-                    
-                    lastSpeed = displaySpeed;
-                }
-            } else {
-                // 第一次获取位置
-                speedDisplay.innerHTML = `0<span class="speed-unit">km/h</span>`;
-                speedDisplay.style.color = "#a0c8ff";
-            }
-            
-            // 保存当前位置供下一次计算使用
-            lastPosition = {
-                coords: {
-                    latitude: lat,
-                    longitude: lng,
-                    accuracy: accuracy
-                },
-                timestamp: position.timestamp
-            };
-        }
-        
-        // 更新信号强度显示
-        function updateSignalStrength(accuracy) {
-            // 根据精度值计算信号强度（精度值越小，信号越好）
-            let strength = 4;
-            
-            if (accuracy > 100) strength = 1;
-            else if (accuracy > 50) strength = 2;
-            else if (accuracy > 20) strength = 3;
-            else strength = 4;
-            
-            // 更新信号条
-            bars.forEach((bar, index) => {
-                if (index < strength) {
-                    bar.style.background = "#4fc3f7";
-                } else {
-                    bar.style.background = "rgba(255, 255, 255, 0.2)";
-                }
-            });
-            
-            // 更新信号强度文本
-            const strengthTexts = ["信号弱", "信号中", "信号良好", "信号强"];
-            signalStrengthDisplay.textContent = strengthTexts[strength - 1] || "信号强";
-            signalStrengthDisplay.style.color = strength < 2 ? "#ff6b6b" : "#4fc3f7";
-        }
-        
-        // 处理错误
-        function handleError(error) {
-            switch(error.code) {
-                case error.PERMISSION_DENIED:
-                    statusDisplay.textContent = "⚠️ 位置权限被拒绝 - 请允许位置访问";
-                    signalStrengthDisplay.textContent = "请在浏览器设置中允许位置权限";
-                    break;
-                case error.POSITION_UNAVAILABLE:
-                    statusDisplay.textContent = "⚠️ 位置信息不可用 - 检查网络和GPS";
-                    signalStrengthDisplay.textContent = "确保设备已启用位置服务";
-                    break;
-                case error.TIMEOUT:
-                    statusDisplay.textContent = "⏳ 获取位置超时 - 正在重试...";
-                    signalStrengthDisplay.textContent = "搜索卫星信号中...";
-                    // 自动重试
-                    setTimeout(startSpeedDetection, 3000);
-                    break;
-                default:
-                    statusDisplay.textContent = "⚠️ 发生未知错误";
-                    signalStrengthDisplay.textContent = "请刷新页面重试";
-                    break;
-            }
-            
-            // 重置信号条
-            bars.forEach(bar => {
-                bar.style.background = "rgba(255, 255, 255, 0.2)";
-            });
-        }
-        
-        // 计算两点间距离（Haversine公式）
-        function calculateDistance(lat1, lon1, lat2, lon2) {
-            const R = 6371e3; // 地球半径(米)
-            const φ1 = lat1 * Math.PI / 180;
-            const φ2 = lat2 * Math.PI / 180;
-            const Δφ = (lat2 - lat1) * Math.PI / 180;
-            const Δλ = (lon2 - lon1) * Math.PI / 180;
-            
-            const a = Math.sin(Δφ / 2) * Math.sin(Δφ / 2) +
-                      Math.cos(φ1) * Math.cos(φ2) *
-                      Math.sin(Δλ / 2) * Math.sin(Δλ / 2);
-            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-            
-            return R * c;
-        }
-    </script>
+    </style>
 </body>
 </html>
